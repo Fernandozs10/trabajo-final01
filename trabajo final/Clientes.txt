@@ -1,0 +1,3 @@
+fernando zegarra 18 masculino 71016363 cerro
+coaguila nicolas 15 masculino 87654321 coliseo
+joey cpp 19 masculino 90807060 arequipa

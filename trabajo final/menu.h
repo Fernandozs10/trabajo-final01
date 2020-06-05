@@ -2,9 +2,10 @@
 #include <string>
 #include "cliente.h"
 #include<fstream>
+#include<stdlib.h>
 using namespace std;
 
-cliente::cliente(string _nombre, int _edad, string _genero, int _documento, string _direccion) {
+cliente::cliente(string _nombre, string _edad, string _genero, string _documento, string _direccion) {
 	nombre = _nombre;
 	edad = _edad;
 	genero = _genero;
@@ -18,21 +19,29 @@ void cliente::registro() {
 	cout << "documento de identificacion: " << documento << endl;
 	cout << "direccion: " << direccion << endl;
 };
-void cliente::modificar() {
-	cout << "modifique el nombre" << endl;
-	cin >> nombre;
-}
 void cliente::obdatos() {
+	ofstream archivo;
+	archivo.open("clientes.txt",ios::out | ios::app);
 	cout << "ingrese su nombre: " << endl;
-	cin >> nombre;
-	cout << "ingrese dsu edad: " << endl;
-	cin >> edad;
+	getline(cin, nombre);
+	archivo << nombre << " ";
+	cout << "ingrese su edad: " << endl;
+	getline(cin,edad);
+	archivo << edad << " ";
 	cout << "ingrese su genero: " << endl;
-	cin >> genero;
+	getline(cin,genero);
+	archivo << genero << " ";
 	cout << "ingrese su documento: " << endl;
-	cin >> documento;
+	getline(cin, documento);
+	archivo << documento << " ";
 	cout << "ingrese su direccion: " << endl;
-	cin >> direccion;
+	getline(cin, direccion);
+	archivo << direccion<<endl;
+	if (archivo.fail()) {
+		cout << "hubo un error" << endl;
+		exit(1);
+	}
+	archivo.close();
 }
 int cliente::inicio() {
 	int x;
@@ -51,4 +60,33 @@ void cliente::ImprimirInfo()
 	cout << "Departamento: " << direccion << '\n';
 	cout << "Puesto: " << edad << '\n';
 	cout << "Salario: " << documento << '\n';
+}
+void cliente::buscar() {
+	string dni2;
+	ifstream archivo;
+	bool encontrado = false;
+	archivo.open("clientes.txt", ios::in);
+	cout << "ingrese el dni" << endl;
+	cin >> dni2;
+	archivo >> nombre;
+	while (!archivo.eof() && !encontrado) {
+		archivo >> edad;
+		archivo >> genero;
+		archivo >> documento;
+		archivo >> direccion;
+		if (documento == dni2) {
+			cout << "nombre-------:" << nombre << endl;
+			cout << "edad---------:" << edad << endl;
+			cout << "genero-------:" << genero << endl;
+			cout << "documento----:" << documento << endl;
+			cout << "direccion----:" << direccion << endl;
+			cout << "\n";
+			encontrado = true;
+		}
+		archivo >> nombre;
+	}
+	if (!encontrado) {
+		cout << "No se encontro el registro del cliente" << endl;
+	}
+	archivo.close();
 }

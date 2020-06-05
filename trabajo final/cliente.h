@@ -7,15 +7,16 @@ class cliente
 {
 private:
 	string nombre;
-	int edad;
+	string edad;
 	string genero;
-	int documento;
+	string documento;
 	string direccion;
 public:
-	cliente(string, int, string, int, string);
+	cliente(string, string, string, string, string);
 	void registro();
 	void modificar();
 	void obdatos();
 	int inicio();
 	void ImprimirInfo();
+	void buscar();
 };
