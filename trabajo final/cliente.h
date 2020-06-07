@@ -12,11 +12,14 @@ private:
 	string documento;
 	string direccion;
 public:
-	cliente(string, string, string, string, string);
+	/*cliente(string, string, string, string, string);*/
+	/*cliente();*/
+	void preinicio();
 	void registro();
-	void modificar();
 	void obdatos();
-	int inicio();
-	void ImprimirInfo();
+	void inicio();
 	void buscar();
+	void modificar();
+	void elicliente();
+
 };

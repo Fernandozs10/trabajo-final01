@@ -1,11 +1,13 @@
 #include <iostream>
 #include "cliente.h"
-#include<fstream>
+#include <fstream>
 using namespace std;
 
 int main()
 {
-    cliente p1("","","","","");
-    p1.buscar();
+    system("color 0E");
+    cliente p1;
+    p1.preinicio();
+    p1.inicio();
     return 0;
 }
