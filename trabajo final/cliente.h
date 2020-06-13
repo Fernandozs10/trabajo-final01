@@ -2,6 +2,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include "usuario.h"
 using namespace std;
 class cliente
 {

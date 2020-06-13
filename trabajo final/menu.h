@@ -2,6 +2,7 @@
 #include<windows.h>
 #include <string>
 #include "cliente.h"
+#include "usuario.h"
 #include<fstream>
 #include<stdlib.h>
 #include<iomanip>
@@ -206,7 +207,9 @@ void cliente::inicio() {
 		elicliente();
 		break;
 	case 6:
-		exit;
+		system("cls");
+		exit(1);
 		break;
 	}
+
 }
