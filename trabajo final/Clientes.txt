@@ -1,4 +1,3 @@
 chupapinga 18 femenino 12345678   arequipa
-fernando 18 masculino 71016363 cerro
-pikachu 20 femenino 161 puebloPaleta
- sh ketchup 8 asculino 65
+fernando 18 masculino 71016363   cerro
+pikachu 182 femenino 161   puebloPaleta

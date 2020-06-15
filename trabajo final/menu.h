@@ -39,6 +39,17 @@ void cliente::registro() {
 		archivo >> nombre;
 	}
 	archivo.close();
+	string x;
+	cout << "퓀ola quiere volver al inicio?:"; cin >> x;
+	if (x == "si") {
+		system("cls");
+		inicio();
+	}
+	else {
+		system("cls");
+		cout << "gracias por su preferencia" << endl;
+		exit(1);
+	}
 };
 void cliente::obdatos() {
 	system("cls");
@@ -64,6 +75,17 @@ void cliente::obdatos() {
 		exit(1);
 	}
 	archivo.close();
+	string x;
+	cout << "퓀ola quiere volver al inicio?:"; cin >> x;
+	if (x == "si") {
+		system("cls");
+		inicio();
+	}
+	else {
+		system("cls");
+		cout << "gracias por su preferencia" << endl;
+		exit(1);
+	}
 }
 void cliente::buscar() {
 	system("cls");
@@ -98,10 +120,23 @@ void cliente::buscar() {
 		cout << "No se encontro el registro del cliente" << endl;
 	}
 	archivo.close();
+	string x;
+	cout << "퓀ola quiere volver al inicio?:"; cin >> x;
+	if (x == "si") {
+		system("cls");
+		inicio();
+	}
+	else {
+		system("cls");
+		cout << "gracias por su preferencia" << endl;
+		exit(1);
+	}
 }
 void cliente::modificar() {
 	system("cls");
 	string nombre2;
+	string edad2;
+	string direccion2;
 	string documento2;
 	ifstream archivo;
 	archivo.open("clientes.txt", ios::in);
@@ -116,8 +151,43 @@ void cliente::modificar() {
 			archivo >> documento;
 			archivo >> direccion;
 			if (documento == documento2) {
-				cout << "Ingrese el nuevo nombre: "; cin >> nombre2;
-				aux << nombre2 << " " << edad << " " << genero << " " << documento << "   " << direccion << "\n";
+				string x;
+				string y;
+				string z;
+				cout << "si desea cambiar el nombre ponga si caso contrario ponga no: "; cin >> x;
+				system("cls");
+				if (x == "si") {
+					cout << "coloque el nuevo nombre:"; cin >> nombre2;
+					x = nombre2;
+					system("cls");
+				}
+				if (x == "no") {
+					x = nombre;
+					system("cls");
+				}
+				cout << "si desea cambiar la edad ponga si caso contrario ponga no: "; cin >> y;
+				if (y == "si") {
+					cout << "coloque la nueva edad:"; cin >> edad2;
+					y = edad2;
+					system("cls");
+				}
+				if (y == "no") {
+					y = edad;
+					system("cls");
+				}
+				cout << "si desea cambiar la direccion si caso contrario ponga no: "; cin >> z;
+				if (z == "si") {
+					cout << "coloque la nueva direccion:"; cin >> direccion2;
+					z = direccion2;
+					system("cls");
+				}
+				if (z == "no") {
+					z = direccion;
+					system("cls");
+
+
+				}
+				aux << x << " " << y << " " << genero << " " << documento << "   " << z << "\n";
 			}
 			else {
 				aux << nombre << " " << edad << " " << genero << " " << documento << "   " << direccion << "\n";
@@ -131,6 +201,17 @@ void cliente::modificar() {
 		cout << "No se pudo abrir el archivo" << "\n" << endl;
 	remove("Clientes.txt");
 	rename("auxiliar.txt", "Clientes.txt");
+	string x;
+	cout << "퓀ola quiere volver al inicio?:"; cin >> x;
+	if (x == "si") {
+		system("cls");
+		inicio();
+	}
+	else {
+		system("cls");
+		cout << "gracias por su preferencia" << endl;
+		exit(1);
+	}
 }
 void cliente::elicliente() {
 	system("cls");
@@ -163,6 +244,17 @@ void cliente::elicliente() {
 		cout << "No se pudo abrir el archivo" << "\n" << endl;
 	remove("Clientes.txt");
 	rename("auxiliar.txt", "Clientes.txt");
+	string x;
+	cout << "퓀ola quiere volver al inicio?:"; cin >> x;
+	if (x == "si") {
+		system("cls");
+		inicio();
+	}
+	else {
+		system("cls");
+		cout << "gracias por su preferencia" << endl;
+		exit(1);
+	}
 }
 void cliente::preinicio() {
 	cout << endl;

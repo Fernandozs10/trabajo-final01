@@ -54,11 +54,11 @@ public:
 			cout << "Usuario o Contrasenia incorrectos." << endl;
 			exit(1);
 		}
-
+		exit;
 
 
 	}
-	void confirmarU() {
+	/*void confirmarU() {
 		ifstream lec;
 		lec.open("Usuario.txt", ios::in);
 
@@ -85,5 +85,5 @@ public:
 
 
 
-	}
+	}*/
 };
