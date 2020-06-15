@@ -36,8 +36,9 @@ void inicio() {
         break;
 
     default:
+        system("cls");
         cout << "No existe esa opcion!!!" << endl;
-
+        exit(1);
     }
 
 }
@@ -46,7 +47,6 @@ int main()
     system("color 0E");
     inicio();
     cliente p1;
-    usuario p;
     p1.inicio();
     return 0;
 }

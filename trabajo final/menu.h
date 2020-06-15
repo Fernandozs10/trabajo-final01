@@ -2,7 +2,6 @@
 #include<windows.h>
 #include <string>
 #include "cliente.h"
-#include "usuario.h"
 #include<fstream>
 #include<stdlib.h>
 #include<iomanip>
@@ -266,7 +265,7 @@ void cliente::preinicio() {
 }
 void cliente::inicio() {
 	int x;
-	cout << setw(68)<<">>>> Bienvenido mongol <<<<" << endl;
+	cout << setw(68)<<">>>> Bienvenido <<<<" << endl;
 	cout << endl;
 	cout << "1. Agregar Clientes" << endl;
 	cout << endl;
@@ -300,8 +299,13 @@ void cliente::inicio() {
 		break;
 	case 6:
 		system("cls");
+		cout << "!! Hasta luego !!";
 		exit(1);
 		break;
+	default:
+		system("cls");
+		cout << "No existe esa opcion!!!" << endl;
+		exit(1);
 	}
 
 }

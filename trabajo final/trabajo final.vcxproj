@@ -151,13 +151,11 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="trabajo final.cpp" />
     <ClCompile Include="user.cpp" />
-    <ClCompile Include="usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cliente.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="user.h" />
-    <ClInclude Include="usuario.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
