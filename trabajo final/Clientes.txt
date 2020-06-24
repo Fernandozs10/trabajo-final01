@@ -1,4 +1,1 @@
-goku 18 femenino 12345678   arequipa
-fernando 18 masculino 71016363   cerro
-pikachu 182 femenino 161   puebloPaleta
-fabian 20 masculino 21345678   bustamante
+Joey 20 Masculino 62 72085353   Moquegua

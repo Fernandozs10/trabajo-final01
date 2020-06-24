@@ -149,12 +149,14 @@
   <ItemGroup>
     <ClCompile Include="cliente.cpp" />
     <ClCompile Include="menu.cpp" />
+    <ClCompile Include="Persona.cpp" />
     <ClCompile Include="trabajo final.cpp" />
     <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cliente.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="Persona.h" />
     <ClInclude Include="user.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

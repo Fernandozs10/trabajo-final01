@@ -1,9 +1,7 @@
 #pragma once
 #include<windows.h>
-#include <string>
 #include "cliente.h"
 #include<fstream>
-#include<stdlib.h>
 #include<iomanip>
 using namespace std;
 
@@ -14,10 +12,9 @@ using namespace std;
 	documento = _documento;
 	direccion = _direccion;
 };*/
-void cliente::registro() {
+void cliente::registro() {/*VP*/
 	system("cls");
 	ifstream archivo;
-	string texto;
 	archivo.open("clientes.txt", ios::in);
 	if (archivo.fail()) {
 		cout << "no se encontro el archivo";
@@ -27,11 +24,13 @@ void cliente::registro() {
 	while (!archivo.eof()) {
 		archivo >> edad;
 		archivo >> genero;
+		archivo >> peso;
 		archivo >> documento;
 		archivo >> direccion;
 		cout << "nombre-------:" << nombre << endl;
 		cout << "edad---------:" << edad << endl;
 		cout << "genero-------:" << genero << endl;
+		cout << "peso---------:" << peso << endl;
 		cout << "documento----:" << documento << endl;
 		cout << "direccion----:" << direccion << endl;
 		cout << "\n";
@@ -50,7 +49,7 @@ void cliente::registro() {
 		exit(1);
 	}
 };
-void cliente::obdatos() {
+void cliente::obdatos() {/*RP*/
 	system("cls");
 	ofstream archivo;
 	archivo.open("clientes.txt",ios::out | ios::app);
@@ -63,17 +62,20 @@ void cliente::obdatos() {
 	cout << "ingrese su genero: " << endl;
 	cin >> genero;
 	archivo << genero << " ";
+	cout << "ingrese su peso: " << endl;
+	cin >> peso;
+	archivo << peso << " ";
 	cout << "ingrese su documento: " << endl;
 	cin >> documento;
 	archivo << documento << " ";
 	cout << "ingrese su direccion: " << endl;
 	cin >> direccion;
 	archivo << direccion<<endl;
+	archivo.close();
 	if (archivo.fail()) {
 		cout << "hubo un error" << endl;
 		exit(1);
 	}
-	archivo.close();
 	string x;
 	cout << "¿hola quiere volver al inicio?:"; cin >> x;
 	if (x == "si") {
@@ -102,12 +104,14 @@ void cliente::buscar() {
 	while (!archivo.eof() && !encontrado) {
 		archivo >> edad;
 		archivo >> genero;
+		archivo >> peso;
 		archivo >> documento;
 		archivo >> direccion;
 		if (documento == dni2) {
 			cout << "nombre-------:" << nombre << endl;
 			cout << "edad---------:" << edad << endl;
 			cout << "genero-------:" << genero << endl;
+			cout << "peso---------:" << peso << endl;
 			cout << "documento----:" << documento << endl;
 			cout << "direccion----:" << direccion << endl;
 			cout << "\n";
@@ -147,6 +151,7 @@ void cliente::modificar() {
 		while (!archivo.eof()) {
 			archivo >> edad;
 			archivo >> genero;
+			archivo >> peso;
 			archivo >> documento;
 			archivo >> direccion;
 			if (documento == documento2) {
@@ -186,10 +191,10 @@ void cliente::modificar() {
 
 
 				}
-				aux << x << " " << y << " " << genero << " " << documento << "   " << z << "\n";
+				aux << x << " " << y << " " << genero <<" "<< peso << " " << documento << "   " << z << "\n";
 			}
 			else {
-				aux << nombre << " " << edad << " " << genero << " " << documento << "   " << direccion << "\n";
+				aux << nombre << " " << edad << " " << genero << " " << peso << " " << documento << "   " << direccion << "\n";
 			}
 			archivo >> nombre;
 		}
@@ -226,13 +231,14 @@ void cliente::elicliente() {
 		while (!archivo.eof()) {
 			archivo >> edad;
 			archivo >> genero;
+			archivo >> peso;
 			archivo >> documento;
 			archivo >> direccion;
 			if (documento == documento2) {
 				cout << "el cliente fue eliminado: ";
 			}
 			else {
-				aux << nombre << " " << edad << " " << genero << " " << documento << "   " << direccion << "\n";
+				aux << nombre << " " << edad << " " << genero << " " << peso << " " << documento << "   " << direccion << "\n";
 			}
 			archivo >> nombre;
 		}
@@ -260,7 +266,7 @@ void cliente::preinicio() {
 	cout <<"                ************************************************************************************"<< endl;
 	cout <<"                                 "<< "Bienvenido a la base de datos del hospital essalud"<<endl;
 	cout <<"               ************************************************************************************" << endl;
-	Sleep(2000);
+	Sleep(3000);
 	system("cls");
 }
 void cliente::inicio() {

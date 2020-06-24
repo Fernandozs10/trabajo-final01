@@ -3,8 +3,8 @@
 #include "user.h"
 #include <fstream>
 using namespace std;
-user u1;
-void inicio() {
+void inicioContra() {
+    user u1;
     cout << "Bienvenido a la base de datos del hospital" << endl;
     cout << endl;
     cout << endl;
@@ -45,8 +45,9 @@ void inicio() {
 int main()
 {
     system("color 0E");
-    inicio();
     cliente p1;
+    p1.preinicio();
+    inicioContra();
     p1.inicio();
     return 0;
 }

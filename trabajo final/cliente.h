@@ -1,16 +1,17 @@
 #pragma once
 #include<iostream>
-#include<string>
 #include<fstream>
+#include "Persona.h"
 using namespace std;
-class cliente
+class cliente:public Persona
 {
 private:
-	string nombre;
+	/*string nombre;
 	string edad;
 	string genero;
 	string documento;
-	string direccion;
+	string direccion;*/
+	string peso;
 public:
 	/*cliente(string, string, string, string, string);*/
 	/*cliente();*/
@@ -21,5 +22,4 @@ public:
 	void buscar();
 	void modificar();
 	void elicliente();
-
 };
